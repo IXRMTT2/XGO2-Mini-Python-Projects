@@ -1,31 +1,25 @@
-from xgo_sdk import XGO
 import time
+from xgoedu import XGOEDU
+from xgolib import XGO
 
+# Initialize the AI module and robot movement
+XGO_edu = XGOEDU()
+dog = XGO('xgomini')
+
+# Crawl motion (lower body, then walk forward)
 def crawl():
-    robot = XGO()
-
-    robot.move_leg(leg_id=0, angle=-30)
-    robot.move_leg(leg_id=1, angle=-30)
-    robot.move_leg(leg_id=2, angle=-30)
-    robot.move_leg(leg_id=3, angle=-30)
-    print("Lowering Legs")
-
-    time.sleep(3) # gives the robot time to lower his legs
-
-    robot.walk(direction=0, speed=30)
-    print("Crawling")
-
-    time.sleep(5) # change how long he will crawl for
-
-    robot.stop()
-    print("Stopped")
-
-    time.sleep(3) # gives the robot time to stop
-
-    robot.stand()
-    print("Standing")
-
-    print(2) # gives the robot time to stand up
+    print("Starting to crawl...")
+    
+    # Lower the body to a crawling position (if the robot supports this)
+    # Assuming the XGO-Mini can perform body lowering for crawling (you may need to adjust this based on actual capabilities)
+    dog.lower_body()  # This is a placeholder. Actual function might be different.
+    time.sleep(1)
+    
+    # Walk forward after lowering the body
+    dog.walk(direction=0, speed=50)  # Move forward at walking speed
+    time.sleep(3)  # Crawl for 3 seconds
+    dog.stop()  # Stop the robot
+    print("Finished crawling.")
 
 if __name__ == "__main__":
     crawl()
