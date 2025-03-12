@@ -22,4 +22,4 @@ while True:
             print("No face detected, performing three axis turn until no face detected for 7 seconds")
             dog.action(4)
             
-time.sleep(0.5)
+time.sleep(0.5) # 0.5 seconds delay
