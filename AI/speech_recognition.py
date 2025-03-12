@@ -1,50 +1,47 @@
-
+import time
 import speech_recognition as sr
-from xgo_sdk import XGO
+from xgoedu import XGOEDU
+from xgolib import XGO
 
+# Initialize the AI module and robot movement
+XGO_edu = XGOEDU()
+dog = XGO('xgomini')
+
+# Voice command processing
 def voice_command():
-    
-    robot = XGO()
-
-    
     recognizer = sr.Recognizer()
 
-    
     with sr.Microphone() as source:
-        print("Say something!")
-        while True:
-            
-            audio = recognizer.listen(source)
+        print("Listening for command...")
 
-            try:
-                
-                command = recognizer.recognize_google(audio).lower()
-                print(f"Command received: {command}")
+        # Adjust for ambient noise and listen to the audio
+        recognizer.adjust_for_ambient_noise(source)
+        audio = recognizer.listen(source)
 
-                
-                if "start" in command:
-                    robot.walk(direction=0, speed=50)  
-                    print("Walking forward...")
-                elif "stop" in command:
-                    robot.stop()
-                    print("Stopped.")
-                elif "left" in command:
-                    robot.turn(direction=-1, speed=50)  
-                    print("Turning left...")
-                elif "right" in command:
-                    robot.turn(direction=1, speed=50)  
-                    print("Turning right...")
-                elif "forward" in command:
-                    robot.walk(direction=0, speed=50)  
-                    print("Moving forward...")
-                elif "backward" in command:
-                    robot.walk(direction=180, speed=50)  
-                    print("Moving backward...")
+        try:
+            command = recognizer.recognize_google(audio).lower()
+            print(f"Received command: {command}")
 
-            except sr.UnknownValueError:
-                print("Could not understand audio.")
-            except sr.RequestError as e:
-                print(f"Could not request results; {e}")
+            # Respond to specific commands
+            if "move" in command:
+                dog.walk(direction=0, speed=50)  # Walk forward
+                print("Moving forward...")
+            elif "stop" in command:
+                dog.stop()  # Stop the robot
+                print("Stopping...")
+            elif "turn" in command:
+                dog.turn(direction=1, speed=50)  # Turn right
+                print("Turning right...")
+            elif "sit" in command:
+                dog.sit()  # Sit down
+                print("Sitting down...")
+            else:
+                print("Command not recognized.")
+
+        except sr.UnknownValueError:
+            print("Sorry, I couldn't understand the command.")
+        except sr.RequestError as e:
+            print(f"Could not request results; {e}")
 
 if __name__ == "__main__":
     voice_command()
