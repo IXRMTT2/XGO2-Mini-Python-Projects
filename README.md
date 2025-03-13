@@ -17,6 +17,7 @@ This contains the basic movements of the robot, such as
 - Laydown
 - sit
 - Claw Grab
+- Claw arm extend and retract
 
 # AI / Advanced Projects
 (Used to help understand the AI for the robots python API)
