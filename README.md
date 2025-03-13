@@ -33,15 +33,25 @@ This contains some fun AI projects such as
 - Playing Audio / Audio files
 - Following a person
 - Tracking and displaying a sound based on a pose
+- Fitness helper
+- QR Recognition
+- Speech Recognition
+- Obstacle Avoidance
 (MORE TO COME)
+
+# LCD Screen Projects
+These are projects for the LCD screen
+- Check the weather (need to use your own API)
+- Display and image and text
+- Draw a square on the screen
+- Draw different shapes on the screen
+- Display a video
 
 # Fun Projects
 This is just some fun projects that combine it all
 Such as
-- Playing the Bleach TYBW S3 Intro on the screen with audio file
-- Playing snake on the screen
-- Making custom emotes and names
-- Dance mode (set custom song yourself)
+- Playing pong against an AI on the LCD Screen
+- Make the robot dance 
 (MORE TO COME)
 
 # 中文翻译
