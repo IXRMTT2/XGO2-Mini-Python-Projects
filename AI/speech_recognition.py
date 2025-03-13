@@ -3,7 +3,6 @@ import speech_recognition as sr
 from xgoedu import XGOEDU
 from xgolib import XGO
 
-# Initialize the AI module and robot movement
 XGO_edu = XGOEDU()
 dog = XGO('xgomini')
 
@@ -35,6 +34,9 @@ def voice_command():
             elif "sit" in command:
                 dog.sit()  # Sit down
                 print("Sitting down...")
+            elif "stand" in command:
+                dog.stand()  # Stand up
+                print("Standing up...")
             else:
                 print("Command not recognized.")
 
