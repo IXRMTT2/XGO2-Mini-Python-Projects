@@ -43,3 +43,24 @@ Such as
 - Dance mode (set custom song yourself)
 (MORE TO COME)
 
+# XGO Robots Library
+This is a good repository to understand it: 
+But heres a basic overview:
+# xgo_sdk = Library
+
+XGO(): Initializes the XGO robot.
+robot.walk(direction, speed): Makes the robot walk in a specified direction at a specified speed.
+robot.turn(direction, speed): Makes the robot turn in a specified direction at a specified speed.
+robot.stop(): Stops the robot's movement.
+robot.sit(): Makes the robot sit down.
+robot.stand(): Makes the robot stand up.
+robot.lie_down(): Makes the robot lie down.
+xgoedu Library
+XGOEDU(): Initializes the XGOEDU module.
+XGO_edu.face_detect(): Detects a face using the XGOEDU module.
+xgolib Library
+XGO('xgomini'): Initializes the XGO Mini robot.
+dog.action(action_id): Performs a specific action based on the action ID.
+dog.lower_body(): Lowers the robot's body.
+
+
