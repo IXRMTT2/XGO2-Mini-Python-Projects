@@ -1,16 +1,15 @@
-from xgo_sdk import XGO
-import time 
+import time
+from xgolib import XGO
+
+dog = XGO('xgomini')
 
 def walk():
-    robot=XGO()
+    print("Walking forward...")
+    dog.walk(direction=0, speed=50) 
+    time.sleep(10)  # Change this to control how long the robot will walk for
 
-    robot.walk(direction=0, speed=50)
-    print("Executing Walk")
-
-    time.sleep(10) # change this for how long you would like him to walk for
-
-    robot.stop()
-    print("Stopped Walking")#
+    dog.stop()  # Stop the robot
+    print("Stopped walking")
 
 if __name__ == "__main__":
     walk()

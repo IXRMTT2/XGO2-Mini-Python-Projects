@@ -1,16 +1,15 @@
-from xgo_sdk import XGO
 import time
+from xgolib import XGO
+
+dog = XGO('xgomini')
 
 def lay_down():
-    robot = XGO()
+    print("Laying down...")
+    dog.lie_down()  
+    time.sleep(5)  # Change how long the robot will stay laid down for
 
-    robot.lie_down()
-    print("Laying down")
-
-    time.sleep(5) # change how long he will stay laid down for
-
-    robot.stand()
-    print("Standing")
+    print("Standing up...")
+    dog.stand()  
 
 if __name__ == "__main__":
     lay_down()

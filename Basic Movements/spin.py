@@ -1,15 +1,14 @@
-from xgo_sdk import XGO
 import time
+from xgolib import XGO
+
+dog = XGO('xgomini')
 
 def spin():
-    robot = XGO()
+    print("Spinning...")
+    dog.turn(direction=1, speed=50)  
+    time.sleep(5)  # Change how long the robot will spin for
 
-    robot.turn(direction=1, speed=50)
-    print("Spinning")
-
-    time.sleep(5) # change how long he will spin for
-
-    robot.stop()
+    dog.stop()  # Stop the robot
     print("Stopped")
 
 if __name__ == "__main__":

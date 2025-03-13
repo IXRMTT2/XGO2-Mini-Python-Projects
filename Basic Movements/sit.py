@@ -1,16 +1,15 @@
-from xgo_sdk import XGO
 import time
+from xgolib import XGO
+
+dog = XGO('xgomini')
 
 def sit():
-    robot = XGO()
+    print("Sitting...")
+    dog.sit()  # Assuming this method makes the robot sit
+    time.sleep(5)  # Change how long the robot will stay sat for
 
-    robot.sit()
-    print("Sitting")
-
-    time.sleep(5) # change how long he will stay sat for
-
-    robot.stand()
-    print("Standing")
+    print("Standing up...")
+    dog.stand()  # Assuming this method makes the robot stand up
 
 if __name__ == "__main__":
     sit()
