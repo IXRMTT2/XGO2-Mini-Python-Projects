@@ -42,6 +42,43 @@ XGO_edu.xgoSpeaker(".wav"): Plays an audio file from directory
 
 XGO_edu.xgoAudioRecord("record",seconds=5): Records any audio and saves it as "record"
 
+# Buttons
+
+XGO_edu.xgoButton("a"): Button A was pressed
+
+XGO_edu.xgoButton("b"): Button b was pressed
+
+# Screen (LCD Screen)
+
+XGO_edu.lcd_arc(,,,,0,100,color=(255,255,255),width=2): Draw an arc 0,0,0, with angel 1 being 100 and color being 255 (rgb)
+
+XGO_edu.lcd_circle(,,,color=(255,255,255),width=2): Draw a circle 0,0,0, with radius 0 being 100 and color being 255 (rgb) and width being 0
+
+XGO_edu.lcd_rectangle(,,,,fill=None,outline=(255,255,255),width=2): Draw a rectangle 0,0,0, with the outline color of 255,255,255 and a width of 2
+
+XGO_edu.lcd_line(,,,,color=(255,255,255),width=2): Draw a line 0,0,0 with color of 255,255,255, and a width of 2.
+
+XGO_edu.lcd_picture("agitated.jpg"): displays the agitated jpg (change out with whatever facial thing you want)
+
+XGO_edu.lcd_picture(".jpg"): Shows an image on the LCD screen
+
+XGO_edu.lcd_text(,,,color=(255,255,255),fontsize=15): Shows LCD text
+
+str(): string
+
+XGO_edu.lcd_clear(): Clears the LCD screen
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
