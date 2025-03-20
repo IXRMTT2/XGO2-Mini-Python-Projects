@@ -25,7 +25,7 @@ def play_audio_and_dance():
     time.sleep(1)
 
     # Stop the robot
-    dog.stop()
+    dog.perform(0)  # Ensure the robot stops
     print("Dance finished")
 
 if __name__ == "__main__":

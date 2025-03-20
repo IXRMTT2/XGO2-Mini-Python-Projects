@@ -26,10 +26,10 @@ ball_dx = 3
 ball_dy = 3
 
 def draw_paddle(x, y):
-    XGO_edu.lcd_rectangle(x, y, x + PADDLE_WIDTH, y + PADDLE_HEIGHT)
+    XGO_edu.lcd_rectangle(x, y, x + PADDLE_WIDTH, y + PADDLE_HEIGHT, outline=(255, 255, 255), width=2)
 
 def draw_ball(x, y):
-    XGO_edu.lcd_rectangle(x, y, x + BALL_SIZE, y + BALL_SIZE)
+    XGO_edu.lcd_rectangle(x, y, x + BALL_SIZE, y + BALL_SIZE, outline=(255, 255, 255), width=2)
 
 def clear_screen():
     XGO_edu.lcd_clear()

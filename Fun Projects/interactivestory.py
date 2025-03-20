@@ -12,32 +12,32 @@ def interactive_story():
     time.sleep(5)
 
     # Robot action: Stand up
-    dog.stand()
+    dog.action(1)  # Assuming action 1 is stand up
     XGO_edu.SpeechSynthesis("XGO stood tall and ready for an adventure.")
     time.sleep(5)
 
     # Robot action: Walk forward
-    dog.walk(direction=0, speed=50)
+    dog.move_x(15)  # Move forward
     XGO_edu.SpeechSynthesis("XGO started walking through the forest, looking for new friends.")
     time.sleep(5)
-    dog.stop()
+    dog.perform(0)  # Stop
 
     # Robot action: Turn left
-    dog.turn(direction=-1, speed=50)
+    dog.turn(-100)  # Turn left
     XGO_edu.SpeechSynthesis("Suddenly, XGO heard a noise and turned to the left.")
     time.sleep(2)
-    dog.stop()
+    dog.perform(0)  # Stop
 
     # Robot action: Sit down
-    dog.sit()
+    dog.action(2)  # Assuming action 2 is sit down
     XGO_edu.SpeechSynthesis("XGO sat down to rest and saw a beautiful butterfly.")
     time.sleep(5)
 
     # Robot action: Extend arm
-    dog.extend_arm()
+    dog.arm(90, 90)  # Extend arm
     XGO_edu.SpeechSynthesis("XGO extended its arm to gently touch the butterfly.")
     time.sleep(5)
-    dog.retract_arm()
+    dog.arm(0, 0)  # Retract arm
 
     # Continue the story
     XGO_edu.SpeechSynthesis("The butterfly flew away, and XGO continued its journey, feeling happy and content.")
@@ -47,7 +47,7 @@ def interactive_story():
     XGO_edu.SpeechSynthesis("And so, XGO's adventure came to an end, but many more awaited in the future. The end.")
     time.sleep(5)
 
-    dog.lie_down()
+    dog.action(3)  # Assuming action 3 is lie down
     XGO_edu.SpeechSynthesis("XGO lay down to rest, dreaming of new adventures.")
     time.sleep(5)
 
