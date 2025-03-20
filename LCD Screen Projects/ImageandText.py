@@ -5,12 +5,12 @@ XGO_edu = XGOEDU()
 
 def display_image():
     print("Displaying an image on the LCD screen...")
-    XGO_edu.lcd_picture(0, 0, 'path_to_image.jpg')  # Display an image at position (0, 0)
+    XGO_edu.lcd_picture('path_to_image.jpg')  # Display an image
     time.sleep(5)  # Display for 5 seconds
 
 def display_additional_text():
     print("Displaying additional text on the LCD screen...")
-    XGO_edu.lcd_text(10, 200, "This is additional text", 2)  # Display text at position (10, 200) with font size 2
+    XGO_edu.lcd_text(10, 200, "This is additional text", color=(255, 255, 255), fontsize=15)  # Display text at position (10, 200) with font size 15
     time.sleep(5)  # Display for 5 seconds
 
 def clear_screen():

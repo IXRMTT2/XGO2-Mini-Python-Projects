@@ -29,13 +29,13 @@ def display_weather():
         temperature, humidity, description = fetch_weather()
         if temperature is not None:
             XGO_edu.lcd_clear()
-            XGO_edu.lcd_text(10, 10, f"Temp: {temperature} C", 2)
-            XGO_edu.lcd_text(10, 40, f"Humidity: {humidity}%", 2)
-            XGO_edu.lcd_text(10, 70, f"Desc: {description}", 2)
+            XGO_edu.lcd_text(10, 10, f"Temp: {temperature} C", color=(255, 255, 255), fontsize=15)
+            XGO_edu.lcd_text(10, 40, f"Humidity: {humidity}%", color=(255, 255, 255), fontsize=15)
+            XGO_edu.lcd_text(10, 70, f"Desc: {description}", color=(255, 255, 255), fontsize=15)
             print(f"Temp: {temperature} C, Humidity: {humidity}%, Desc: {description}")
         else:
             XGO_edu.lcd_clear()
-            XGO_edu.lcd_text(10, 10, "Error fetching weather", 2)
+            XGO_edu.lcd_text(10, 10, "Error fetching weather", color=(255, 255, 255), fontsize=15)
             print("Error fetching weather data")
 
         time.sleep(600)  # Update every 10 minutes
