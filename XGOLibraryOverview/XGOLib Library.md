@@ -5,6 +5,8 @@ XGO('xgomini'): Initializes the XGO Mini robot.
 
 # Methods:
 dog.action(action_id): Performs a specific action based on the action ID.
+1: Lie Down
+2: 
 
 dog.lower_body(): Lowers the robot's body.
 
