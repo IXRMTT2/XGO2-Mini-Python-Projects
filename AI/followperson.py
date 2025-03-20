@@ -28,16 +28,16 @@ def follow_person():
                     center_x = x + w // 2
 
                     if center_x < 200:
-                        dog.turn(direction=-1, speed=50)  # Turn left
+                        dog.turn(-100)  # Turn left
                         print("Turning left...")
                     elif center_x > 440:
-                        dog.turn(direction=1, speed=50)  # Turn right
+                        dog.turn(100)  # Turn right
                         print("Turning right...")
                     else:
-                        dog.walk(direction=0, speed=50)  # Move forward
+                        dog.move_x(15)  # Move forward
                         print("Moving forward...")
             else:
-                dog.stop()  # Stop the robot if no faces are detected
+                dog.perform(0)  # Stop the robot if no faces are detected
                 print("No person detected, stopping...")
 
             cv2.imshow('Person Detection', frame)
@@ -51,7 +51,7 @@ def follow_person():
     finally:
         cap.release()
         cv2.destroyAllWindows()
-        dog.stop()  # Ensure the robot stops
+        dog.perform(0)  # Ensure the robot stops
         print("Stopped the robot")
 
 if __name__ == "__main__":

@@ -23,19 +23,22 @@ def voice_command():
 
             # Respond to specific commands
             if "move" in command:
-                dog.walk(direction=0, speed=50)  # Walk forward
+                dog.move_x(15)  # Move forward
                 print("Moving forward...")
             elif "stop" in command:
-                dog.stop()  # Stop the robot
+                dog.perform(0)  # Stop the robot
                 print("Stopping...")
-            elif "turn" in command:
-                dog.turn(direction=1, speed=50)  # Turn right
+            elif "turn left" in command:
+                dog.turn(-100)  # Turn left
+                print("Turning left...")
+            elif "turn right" in command:
+                dog.turn(100)  # Turn right
                 print("Turning right...")
             elif "sit" in command:
-                dog.sit()  # Sit down
+                dog.action(1)  # Perform sit action
                 print("Sitting down...")
             elif "stand" in command:
-                dog.stand()  # Stand up
+                dog.action(2)  # Perform stand action
                 print("Standing up...")
             else:
                 print("Command not recognized.")

@@ -17,23 +17,23 @@ def qr_code_recognition():
             if not ret:
                 break
 
-            qr_code = XGO_edu.QRRecognition(frame)
+            qr_code = XGO_edu.QRRecognition()
             print(f"Detected QR code: {qr_code}")
 
             if qr_code == "forward":
-                dog.walk(direction=0, speed=50)  # Walk forward
-                print("Walking forward...")
+                dog.move_x(15)  # Move forward
+                print("Moving forward...")
             elif qr_code == "stop":
-                dog.stop()  # Stop the robot
+                dog.perform(0)  # Stop the robot
                 print("Stopping...")
             elif qr_code == "turn_left":
-                dog.turn(direction=-1, speed=50)  # Turn left
+                dog.turn(-100)  # Turn left
                 print("Turning left...")
             elif qr_code == "turn_right":
-                dog.turn(direction=1, speed=50)  # Turn right
+                dog.turn(100)  # Turn right
                 print("Turning right...")
             else:
-                dog.stop()  # Default action
+                dog.perform(0)  # Default action
                 print("No valid QR code detected, stopping...")
 
             cv2.imshow('QR Code Recognition', frame)
@@ -47,7 +47,7 @@ def qr_code_recognition():
     finally:
         cap.release()
         cv2.destroyAllWindows()
-        dog.stop()  # Ensure the robot stops
+        dog.perform(0)  # Ensure the robot stops
         print("Stopped the robot")
 
 if __name__ == "__main__":

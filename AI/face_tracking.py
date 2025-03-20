@@ -24,13 +24,17 @@ def face_detection():
         if len(faces) > 0:
             for (x, y, w, h) in faces:
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
+                center_x = x + w // 2
 
-                if x < 200:
-                    dog.turn(direction=-1, speed=50)  # Turn left
-                elif x > 440:
-                    dog.turn(direction=1, speed=50)  # Turn right
+                if center_x < 200:
+                    dog.turn(-100)  # Turn left
+                    print("Turning left...")
+                elif center_x > 440:
+                    dog.turn(100)  # Turn right
+                    print("Turning right...")
                 else:
-                    dog.walk(direction=0, speed=50)  # Walk forward
+                    dog.move_x(15)  # Move forward
+                    print("Moving forward...")
 
         cv2.imshow('Face Detection', frame)
 
@@ -39,6 +43,8 @@ def face_detection():
 
     cap.release()
     cv2.destroyAllWindows()
+    dog.perform(0)  # Ensure the robot stops
+    print("Stopped the robot")
 
 if __name__ == "__main__":
     face_detection()

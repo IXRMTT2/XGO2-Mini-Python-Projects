@@ -36,35 +36,35 @@ def detect_and_pickup_red_ball():
                 center_x = x + w // 2
 
                 if center_x < 200:
-                    dog.turn(direction=-1, speed=50)  # Turn left
+                    dog.turn(-100)  # Turn left
                     print("Turning left...")
                 elif center_x > 440:
-                    dog.turn(direction=1, speed=50)  # Turn right
+                    dog.turn(100)  # Turn right
                     print("Turning right...")
                 else:
-                    dog.walk(direction=0, speed=50)  # Move forward
+                    dog.move_x(15)  # Move forward
                     print("Moving forward...")
 
                 if w * h > 5000:  # If the ball is close enough
-                    dog.stop()
+                    dog.perform(0)  # Stop
                     print("Picking up the ball...")
-                    dog.extend_arm()
+                    dog.arm(90, 90)  # Extend arm
                     time.sleep(1)
-                    dog.extend_claw_grip()
+                    dog.claw(128)  # Grip claw
                     time.sleep(1)
-                    dog.retract_arm()
+                    dog.arm(0, 0)  # Retract arm
                     time.sleep(1)
                     print("Holding the ball for 10 seconds...")
                     time.sleep(10)
                     print("Releasing the ball...")
-                    dog.extend_arm()
+                    dog.arm(90, 90)  # Extend arm
                     time.sleep(1)
-                    dog.retract_claw_grip()
+                    dog.claw(0)  # Release claw
                     time.sleep(1)
-                    dog.retract_arm()
+                    dog.arm(0, 0)  # Retract arm
                     time.sleep(1)
                     print("Returning to normal state...")
-                    dog.stop()
+                    dog.perform(0)  # Stop
                     break
 
             cv2.imshow('Red Ball Detection', frame)
@@ -78,7 +78,7 @@ def detect_and_pickup_red_ball():
     finally:
         cap.release()
         cv2.destroyAllWindows()
-        dog.stop()  # Ensure the robot stops
+        dog.perform(0)  # Ensure the robot stops
         print("Stopped the robot")
 
 if __name__ == "__main__":

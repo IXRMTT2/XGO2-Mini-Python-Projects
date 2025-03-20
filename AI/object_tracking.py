@@ -32,13 +32,13 @@ def color_tracking():
                 center_x = x + w // 2
 
                 if center_x < 200:  
-                    dog.turn(direction=-1, speed=50)  # Turn left
+                    dog.turn(-100)  # Turn left
                     print("Turning left...")
                 elif center_x > 440:  
-                    dog.turn(direction=1, speed=50)  # Turn right
+                    dog.turn(100)  # Turn right
                     print("Turning right...")
                 else:  
-                    dog.walk(direction=0, speed=50)  # Move forward
+                    dog.move_x(15)  # Move forward
                     print("Moving forward...")
 
             cv2.imshow('Color Object Tracking', frame)
@@ -52,7 +52,7 @@ def color_tracking():
     finally:
         cap.release()
         cv2.destroyAllWindows()
-        dog.stop()  # Ensure the robot stops
+        dog.perform(0)  # Ensure the robot stops
         print("Stopped the robot")
 
 if __name__ == "__main__":

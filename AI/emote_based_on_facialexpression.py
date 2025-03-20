@@ -17,7 +17,7 @@ def emotion_recognition():
             if not ret:
                 break
 
-            emotion = XGO_edu.emotion(frame)
+            emotion = XGO_edu.emotion()
             print(f"Detected emotion: {emotion}")
 
             if emotion == "happy":
@@ -44,7 +44,7 @@ def emotion_recognition():
     finally:
         cap.release()
         cv2.destroyAllWindows()
-        dog.stop()  # Ensure the robot stops
+        dog.perform(0)  # Ensure the robot stops
         print("Stopped the robot")
 
 if __name__ == "__main__":

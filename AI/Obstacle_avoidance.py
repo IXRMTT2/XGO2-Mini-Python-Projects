@@ -1,5 +1,5 @@
 import cv2
-import numpy as np
+import numpy np
 from xgoedu import XGOEDU
 from xgolib import XGO
 import time
@@ -30,16 +30,16 @@ def avoid_obstacles():
                 center_x = x + w // 2
 
                 if center_x < 200:
-                    dog.turn(direction=-1, speed=50)  # Turn left
+                    dog.turn(-100)  # Turn left
                     print("Turning left...")
                 elif center_x > 440:
-                    dog.turn(direction=1, speed=50)  # Turn right
+                    dog.turn(100)  # Turn right
                     print("Turning right...")
                 else:
-                    dog.walk(direction=0, speed=50)  # Move forward
+                    dog.move_x(15)  # Move forward
                     print("Moving forward...")
             else:
-                dog.walk(direction=0, speed=50)  # Move forward if no obstacles are detected
+                dog.move_x(15)  # Move forward if no obstacles are detected
                 print("No obstacles detected, moving forward...")
 
             cv2.imshow('Obstacle Avoidance', frame)
@@ -53,7 +53,7 @@ def avoid_obstacles():
     finally:
         cap.release()
         cv2.destroyAllWindows()
-        dog.stop()  # Ensure the robot stops
+        dog.perform(0)  # Ensure the robot stops
         print("Stopped the robot")
 
 if __name__ == "__main__":
