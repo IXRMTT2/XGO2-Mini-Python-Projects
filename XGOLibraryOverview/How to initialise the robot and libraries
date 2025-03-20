@@ -1,5 +1,7 @@
 # Initialise the Robot
 (put this at the start of your code before typing anything)
+(remember the robot uses python)
+
 
 import cv2
 import time
