@@ -1,0 +1,8 @@
+# Initialise the Robot
+(put this at the start of your code before typing anything)
+
+import time
+from xgolib import XGO
+from xgoedu import XGOEDU
+XGO_mini = XGO("xgomini")
+XGO_edu = XGOEDU()
