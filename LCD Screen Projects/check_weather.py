@@ -6,8 +6,8 @@ import time
 XGO_edu = XGOEDU()
 
 # Replace with your OpenWeatherMap API key
-API_KEY = 'your_api_key_here'
-CITY = 'your_city_here'
+API_KEY = 'd470f6b161d52c36ff65a2321ab1a3d1'
+CITY = 'belfast'
 URL = f'http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric'
 
 def fetch_weather():
