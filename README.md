@@ -1,7 +1,7 @@
 # XGO2-Mini Python Projects
 Authors: IXRMTT2 (python), EmmetB-css(code-block examples).
 (We will try maintain this, but this was only made as a school project.)
-this is some projects i made for the XGO-mini robot as I couldn't find any public so here's a library of ones ive already made, but ill upload to github
+this is some projectsI made for the XGO-mini robot as I couldn't find any public so here's a library of ones ive already made, but ill upload to github
 
 (IMPORTANT) I am unsure if this works with any of their other robots as I only have the latest XGO2-Mini Robot.
 
